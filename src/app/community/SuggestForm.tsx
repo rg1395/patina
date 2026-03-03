@@ -75,7 +75,7 @@ export default function SuggestForm({ user, defaultTab = "raduno" }: { user: any
           {isRaduno ? "Suggerisci un raduno" : "Proponi una rubrica"}
         </div>
         <h3 style={{ fontFamily: "Playfair Display, serif", fontWeight: 900, fontSize: "1.5rem", color: C.cream, lineHeight: 1.15 }}>
-          {isRaduno ? "Conosci un raduno che dovremmo seguire?" : "Hai un'idea per un articolo tecnico?"}
+          {isRaduno ? "Vuoi suggerire un evento o raduno?" : "Hai un'idea per un articolo tecnico?"}
         </h3>
       </div>
 
