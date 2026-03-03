@@ -2,7 +2,6 @@ import { createClient } from "@/lib/supabase/server";
 import { getAdmin, fetchProfiles } from "@/lib/db";
 import Link from "next/link";
 import { C } from "@/lib/design";
-import SuggestForm from "./SuggestForm";
 
 const S = {
   serif: { fontFamily: "Playfair Display, serif" },
@@ -114,7 +113,6 @@ export default async function CommunityPage({ searchParams }: { searchParams: Re
           </div>
         )}
 
-        <SuggestForm user={user} />
       </div>
     </div>
   );
