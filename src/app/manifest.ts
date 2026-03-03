@@ -15,7 +15,7 @@ export default function manifest(): MetadataRoute.Manifest {
       { src: "/icon-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
     screenshots: [
-      { src: "/screenshot-mobile.png", sizes: "390x844", type: "image/png", form_factor: "narrow" },
+      { src: "/screenshot-mobile.png", sizes: "390x844", type: "image/png" },
     ],
     categories: ["shopping", "lifestyle"],
     lang: "it",
