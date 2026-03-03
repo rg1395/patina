@@ -354,15 +354,23 @@ export default async function HomePage() {
           )}
 
           {/* Search bar */}
+          <style>{`
+            @media (max-width: 600px) {
+              .search-row { flex-direction: column !important; border-radius: 16px !important; padding: .5rem !important; }
+              .search-select { display: none !important; }
+              .search-divider { display: none !important; }
+              .search-btn { width: 100% !important; border-radius: 12px !important; padding: .9rem !important; text-align: center; }
+            }
+          `}</style>
           <form action="/search" method="GET" style={{ marginTop: "2rem" }}>
-            <div style={{ display: "flex", background: "rgba(246,242,235,.05)", border: "1px solid rgba(200,184,152,.12)", borderRadius: "100px", padding: ".35rem", gap: ".3rem", alignItems: "center" }}>
-              <select name="makes" style={{ fontFamily: "DM Mono, monospace", fontSize: ".58rem", letterSpacing: ".08em", textTransform: "uppercase", padding: "0 1rem", background: "transparent", color: "rgba(246,242,235,.4)", border: "none", outline: "none", cursor: "pointer" }}>
+            <div className="search-row" style={{ display: "flex", background: "rgba(246,242,235,.05)", border: "1px solid rgba(200,184,152,.12)", borderRadius: "100px", padding: ".35rem", gap: ".3rem", alignItems: "center" }}>
+              <select name="makes" className="search-select" style={{ fontFamily: "DM Mono, monospace", fontSize: ".58rem", letterSpacing: ".08em", textTransform: "uppercase", padding: "0 1rem", background: "transparent", color: "rgba(246,242,235,.4)", border: "none", outline: "none", cursor: "pointer" }}>
                 <option value="" style={{ color: C.dark, background: "#fff" }}>Tutte le marche</option>
                 {MAKES.map(m => <option key={m} value={m} style={{ color: C.dark, background: "#fff" }}>{m}</option>)}
               </select>
-              <div style={{ width: "1px", height: "18px", background: "rgba(200,184,152,.15)", flexShrink: 0 }} />
-              <input name="q" type="text" placeholder="Weber DCOE, pistoni Alfa 1750, testata Fulvia…" style={{ flex: 1, background: "transparent", border: "none", outline: "none", color: C.cream, fontFamily: "Lora, serif", fontStyle: "italic", fontSize: "1rem", padding: ".7rem 1rem" }} />
-              <button type="submit" style={{ background: C.orange, color: C.cream, border: "none", borderRadius: "100px", padding: ".8rem 1.8rem", fontFamily: "DM Mono, monospace", fontSize: ".62rem", letterSpacing: ".1em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap" }}>Cerca</button>
+              <div className="search-divider" style={{ width: "1px", height: "18px", background: "rgba(200,184,152,.15)", flexShrink: 0 }} />
+              <input name="q" type="text" placeholder="Cerca ricambi…" style={{ flex: 1, background: "transparent", border: "none", outline: "none", color: C.cream, fontFamily: "Lora, serif", fontStyle: "italic", fontSize: "1rem", padding: ".7rem 1rem", minWidth: 0 }} />
+              <button type="submit" className="search-btn" style={{ background: C.orange, color: C.cream, border: "none", borderRadius: "100px", padding: ".8rem 1.8rem", fontFamily: "DM Mono, monospace", fontSize: ".62rem", letterSpacing: ".1em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>Cerca</button>
             </div>
             <div style={{ display: "flex", gap: ".5rem", flexWrap: "wrap", marginTop: "1rem" }}>
               {["NOS", "Carburazione", "Motore", "Ducati", "Alfa Romeo", "Ferrari"].map(t => (
