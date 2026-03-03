@@ -151,7 +151,7 @@ export default async function PoolPage({ params }: Props) {
           <div style={{ ...mono, fontSize: "0.58rem", color: C.muted, marginBottom: "1rem" }}>Chat del pool</div>
           <PoolChat
             poolId={pool.id}
-            initialMessages={(messages ?? []).reverse()}
+            initialMessages={(messages ?? []).map((m: any) => ({ ...m, author: Array.isArray(m.author) ? m.author[0] : m.author })).reverse()}
             userId={user?.id ?? null}
             isMember={isMember}
           />
