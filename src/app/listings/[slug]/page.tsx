@@ -61,7 +61,7 @@ export default async function ListingPage({ params }: { params: { slug: string }
   const userHasValuated = !!(user && rawValuations.some((v: any) => v.user_id === user.id));
 
   // Fetch owner profiles for "chi ha questo veicolo"
-  const ownerIds = [...new Set((vehicleOwners ?? []).map((v: any) => v.owner_id))];
+  const ownerIds = (vehicleOwners ?? []).map((v: any) => v.owner_id).filter((id: string, i: number, arr: string[]) => arr.indexOf(id) === i);
   const ownerProfiles = ownerIds.length > 0
     ? await admin.from("profiles").select("id,username,avatar_url").in("id", ownerIds)
     : { data: [] };
