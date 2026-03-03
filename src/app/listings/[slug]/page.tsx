@@ -52,7 +52,7 @@ export default async function ListingPage({ params }: { params: { slug: string }
   const vehicleOwners = vehicleOwnersResult.data ?? [];
 
   // Fetch usernames for valuations
-  const valUserIds = [...new Set(rawValuations.map((v: any) => v.user_id))];
+  const valUserIds = rawValuations.map((v: any) => v.user_id).filter((id: string, i: number, arr: string[]) => arr.indexOf(id) === i);
   const valProfiles = valUserIds.length > 0
     ? await admin.from("profiles").select("id,username,is_expert").in("id", valUserIds)
     : { data: [] };
