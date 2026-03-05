@@ -4,6 +4,12 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import BottomNav from "@/components/layout/BottomNav";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Patina — Ricambi Classici d'Epoca",
   description: "Il marketplace europeo per ricambi auto e moto d'epoca. NOS, originali, restaurati. Compra e vendi con fiducia.",
