@@ -4,7 +4,7 @@ import { C } from "@/lib/design";
 export default function Footer() {
   const mn: React.CSSProperties = { fontFamily:"DM Mono, monospace", fontSize:".5rem", letterSpacing:".15em", textTransform:"uppercase" };
   return (
-    <footer style={{ background:C.dark, color:C.cream, padding:"4rem 1.5rem 2rem", borderTop:"1px solid rgba(200,184,152,0.08)" }}>
+    <footer style={{ background:C.dark, color:C.cream, padding:"4rem 1.5rem calc(2rem + 70px)", borderTop:"1px solid rgba(200,184,152,0.08)" }}>
       <div style={{ maxWidth:"1280px", margin:"0 auto" }}>
         <div style={{ marginBottom:"2.5rem" }}>
           <div style={{ fontFamily:"Playfair Display, serif", fontWeight:900, fontSize:"2rem", letterSpacing:"-.02em", marginBottom:".6rem" }}>Patin<span style={{ color:C.orange }}>a</span></div>
