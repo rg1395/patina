@@ -227,7 +227,7 @@ export default async function HomePage() {
         </div>
 
         {/* Vertical divider */}
-        <div style={{ position: "absolute", top: 0, left: "50%", bottom: 0, width: "1px", background: "rgba(200,184,152,.07)", zIndex: 3 }} />
+        <div id="heroDivider" style={{ position: "absolute", top: 0, left: "50%", bottom: 0, width: "1px", background: "rgba(200,184,152,.07)", zIndex: 3 }} />
 
         <style>{`
           @keyframes fadeUp { from { opacity:0; transform:translateY(28px) } to { opacity:1; transform:translateY(0) } }
@@ -236,6 +236,7 @@ export default async function HomePage() {
             #heroSection { grid-template-columns:1fr!important; }
             #heroMosaic { display:none!important; }
             #heroText { padding:7rem 1.8rem 4rem!important; min-height:100svh; justify-content:flex-end; }
+            #heroDivider { display:none!important; }
           }
         `}</style>
       </section>
