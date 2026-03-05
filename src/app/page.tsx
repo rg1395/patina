@@ -146,7 +146,7 @@ export default async function HomePage() {
       {/* ══════════════════════════════════════════
           HERO — editorial split
       ══════════════════════════════════════════ */}
-      <section style={{ minHeight: "100svh", display: "grid", gridTemplateColumns: "1fr 1fr", position: "relative", overflow: "hidden" }} id="heroSection">
+      <section style={{ minHeight: "100svh", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,400px),1fr))", position: "relative", overflow: "hidden" }} id="heroSection">
 
         {/* Grain overlay */}
         <div style={{ position: "absolute", inset: 0, zIndex: 1, backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E")`, backgroundSize: "200px 200px", opacity: .5, pointerEvents: "none" }} />
@@ -277,7 +277,7 @@ export default async function HomePage() {
           </div>
 
           {/* Pillars */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", borderTop: `1px solid rgba(20,18,16,.1)` }} id="pillarsGrid">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(120px,1fr))", borderTop: `1px solid rgba(20,18,16,.1)` }} id="pillarsGrid">
             {PILLARS.map((p, i) => (
               <Link key={p.num} href={p.href} className="pillar-link" style={{
                 borderRight: i < 3 ? `1px solid rgba(20,18,16,.1)` : "none",
@@ -293,7 +293,7 @@ export default async function HomePage() {
           </div>
 
           {/* Stats bar */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", border: `1px solid rgba(20,18,16,.1)`, borderRadius: "14px", overflow: "hidden", marginTop: "3rem" }} id="statsBar">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(120px,1fr))", border: `1px solid rgba(20,18,16,.1)`, borderRadius: "14px", overflow: "hidden", marginTop: "3rem" }} id="statsBar">
             {[
               { n: `${totalListings ?? 0}+`, l: "Ricambi attivi" },
               { n: "12k+", l: "Collezionisti" },
@@ -505,7 +505,7 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1px", background: "rgba(246,242,235,.12)", borderRadius: "12px", overflow: "hidden" }} id="eventsGrid">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(120px,1fr))", gap: "1px", background: "rgba(246,242,235,.12)", borderRadius: "12px", overflow: "hidden" }} id="eventsGrid">
             {(events?.length ?? 0) === 0 ? (
               <div style={{ gridColumn: "1/-1", padding: "3rem", textAlign: "center" }}>
                 <p style={{ ...S.body, fontStyle: "italic", color: "rgba(246,242,235,.5)" }}>Nessun evento in programma. <Link href="/events" style={{ color: C.cream, textDecoration: "none" }}>Suggerisci un raduno →</Link></p>

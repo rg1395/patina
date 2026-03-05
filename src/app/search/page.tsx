@@ -67,7 +67,7 @@ export default async function SearchPage({ searchParams }: Props) {
         </div>
       </div>
 
-      <div className="search-layout" style={{ maxWidth:"1280px", margin:"0 auto", padding:"1.5rem", display:"grid", gridTemplateColumns:"240px 1fr", gap:"2rem", alignItems:"start" }} id="searchLayout">
+      <div style={{ maxWidth:"1280px", margin:"0 auto", padding:"clamp(0.8rem,3vw,1.5rem)", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,240px),1fr))", gap:"2rem", alignItems:"start" }} id="searchLayout">
         {/* Sidebar filters */}
         <div style={{ position:"sticky", top:"70px" }} id="filterSidebar">
           <div style={{ fontFamily:"DM Mono, monospace", fontSize:".58rem", letterSpacing:".12em", textTransform:"uppercase", color:C.muted, marginBottom:"1rem" }}>Filtra</div>

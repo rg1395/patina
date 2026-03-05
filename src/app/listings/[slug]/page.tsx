@@ -70,10 +70,7 @@ export default async function ListingPage({ params }: { params: { slug: string }
   const mainImg = l.cover_image_url ?? images[0] ?? null;
 
   return (
-    <div>
-      <style>{`
-        @media (max-width: 768px) {
-          .listing-grid { grid-template-columns: 1fr !important; padding: 1rem !important; gap: 1.5rem !important; }
+    <div> { grid-template-columns: 1fr !important; padding: 1rem !important; gap: 1.5rem !important; }
           .listing-sidebar { position: static !important; width: 100% !important; }
           .listing-similar-grid { grid-template-columns: repeat(2,1fr) !important; }
           .listing-owners-grid { grid-template-columns: repeat(2,1fr) !important; }
@@ -92,7 +89,7 @@ export default async function ListingPage({ params }: { params: { slug: string }
         </div>
       </div>
 
-      <div className="listing-grid" style={{ maxWidth: "1280px", margin: "0 auto", padding: "2.5rem", display: "grid", gridTemplateColumns: "1fr 360px", gap: "3rem", alignItems: "start" }}>
+      <div className="listing-grid" style={{ maxWidth: "1280px", margin: "0 auto", padding: "clamp(1rem, 4vw, 2.5rem)", display: "grid", gridTemplateColumns: "min(100%, calc(100% - 360px - 3rem)) 360px", gap: "3rem", alignItems: "start" }}>
         {/* LEFT */}
         <div>
           {/* Main image */}
@@ -184,7 +181,7 @@ export default async function ListingPage({ params }: { params: { slug: string }
               <p style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic", fontSize: "0.95rem", color: C.muted, marginBottom: "1.2rem" }}>
                 Collezionisti che possiedono veicoli compatibili con questo ricambio.
               </p>
-              <div className="listing-owners-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(140px,1fr))", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
                 {(vehicleOwners ?? []).slice(0, 6).map((v: any) => {
                   const owner = ownerMap[v.owner_id];
                   return (
@@ -210,7 +207,7 @@ export default async function ListingPage({ params }: { params: { slug: string }
           {(similar?.length ?? 0) > 0 && (
             <div style={{ borderTop: `1px solid ${C.tan}`, paddingTop: "2rem" }}>
               <h3 style={{ ...serif, fontWeight: 700, fontSize: "1.4rem", marginBottom: "1.2rem" }}>Annunci <em style={{ fontStyle: "italic", color: C.orange }}>simili</em></h3>
-              <div className="listing-similar-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(140px,1fr))", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
                 {(similar ?? []).map((s: any) => (
                   <Link key={s.id} href={`/listings/${s.slug ?? s.id}`} style={{ background: C.cream, textDecoration: "none", color: "inherit", display: "block" }}>
                     <div style={{ aspectRatio: "4/3", background: C.dark, overflow: "hidden" }}>
@@ -228,7 +225,7 @@ export default async function ListingPage({ params }: { params: { slug: string }
         </div>
 
         {/* RIGHT SIDEBAR */}
-        <div className="listing-sidebar" style={{ position: "sticky", top: "5rem" }}>
+        <div style={{ position: "sticky", top: "5rem" }}>
           {/* Price card */}
           <div style={{ border: `1px solid ${C.tan}`, borderRadius: "16px", overflow: "hidden", marginBottom: "1rem" }}>
             <div style={{ background: C.dark, padding: "1.5rem 1.2rem", borderRadius: "16px 16px 0 0" }}>
