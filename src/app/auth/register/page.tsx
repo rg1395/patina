@@ -56,12 +56,13 @@ function RegisterForm() {
 
     // If user is immediately confirmed (e.g. email confirmation disabled)
     if (data.user && data.session) {
-      await supabase.from("profiles").insert({
+      // Trigger may have already created profile — update username instead of insert
+      await supabase.from("profiles").upsert({
         id: data.user.id,
         username,
         full_name: null,
         avatar_url: null,
-      });
+      }, { onConflict: "id" });
       window.location.href = next;
       return;
     }
