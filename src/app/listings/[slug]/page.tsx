@@ -71,6 +71,18 @@ export default async function ListingPage({ params }: { params: { slug: string }
 
   return (
     <div>
+      <style>{`
+        @media (max-width: 768px) {
+          .listing-grid { grid-template-columns: 1fr !important; padding: 1rem !important; gap: 1.5rem !important; }
+          .listing-sidebar { position: static !important; width: 100% !important; }
+          .listing-similar-grid { grid-template-columns: repeat(2,1fr) !important; }
+          .listing-owners-grid { grid-template-columns: repeat(2,1fr) !important; }
+        }
+        @media (max-width: 480px) {
+          .listing-similar-grid { grid-template-columns: 1fr !important; }
+          .listing-owners-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       {/* Breadcrumb */}
       <div style={{ background: C.light, borderBottom: `1px solid ${C.tan}`, padding: "0.7rem 2.5rem" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", ...mono, fontSize: "0.55rem", letterSpacing: "0.08em", textTransform: "uppercase", color: C.muted, display: "flex", gap: "0.5rem", alignItems: "center" }}>
