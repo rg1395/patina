@@ -59,10 +59,13 @@ export default function NotificationBell({ userId }: { userId: string }) {
 
   return (
     <div ref={ref} style={{ position: "relative" }}>
-      <button onClick={() => setOpen(!open)} style={{ position: "relative", background: "none", border: "none", cursor: "pointer", fontSize: "1.1rem", lineHeight: 1, padding: "0.2rem" }}>
-        🔔
+      <button onClick={() => setOpen(!open)} style={{ position: "relative", width: "32px", height: "32px", borderRadius: "8px", background: "rgba(196,98,45,0.12)", border: "1px solid rgba(196,98,45,0.25)", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C4622D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        </svg>
         {unread > 0 && (
-          <span style={{ position: "absolute", top: "-6px", right: "-6px", background: C.orange, color: C.cream, borderRadius: "50%", width: "16px", height: "16px", display: "flex", alignItems: "center", justifyContent: "center", ...mono, fontSize: "0.42rem" }}>
+          <span style={{ position: "absolute", top: "-5px", right: "-5px", background: C.orange, color: C.cream, borderRadius: "50%", width: "14px", height: "14px", display: "flex", alignItems: "center", justifyContent: "center", ...mono, fontSize: "0.38rem", border: "1.5px solid #141210" }}>
             {unread > 9 ? "9+" : unread}
           </span>
         )}
