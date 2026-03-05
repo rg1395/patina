@@ -148,77 +148,29 @@ input, textarea, select { font-family: inherit; }
 .btn-sm { padding: .5rem 1rem; font-size: .55rem; }
 .btn-full { width: 100%; }
 
-/* ══════════════════════════════════════════
-   PATINA — MOBILE RESPONSIVE (max 768px)
-   ══════════════════════════════════════════ */
-
 @media (max-width: 768px) {
-
-  /* ── Global ── */
-  html, body { overflow-x: hidden; max-width: 100vw; }
-
-  /* ── Section padding ── */
-  section { padding-left: 1.2rem !important; padding-right: 1.2rem !important; }
-
-  /* ── Hero split (homepage) ── */
-  #heroSection { grid-template-columns: 1fr !important; min-height: auto !important; }
-
-  /* ── Stats bar ── */
-  #statsBar { grid-template-columns: repeat(2,1fr) !important; }
-
-  /* ── Events grid ── */
-  #eventsGrid { grid-template-columns: repeat(2,1fr) !important; }
-
-  /* ── Search bar ── */
-  .search-row { flex-direction: column !important; border-radius: 16px !important; padding: .5rem !important; }
-  .search-select { display: none !important; }
-  .search-divider { display: none !important; }
-  .search-btn { width: 100% !important; border-radius: 12px !important; padding: .9rem !important; }
-
-  /* ── Listing detail ── */
-  .listing-grid { grid-template-columns: 1fr !important; padding: 1.2rem !important; gap: 1.5rem !important; }
-  .listing-sidebar { position: static !important; }
+  .listing-grid { grid-template-columns: 1fr !important; padding: 1rem !important; gap: 1.5rem !important; }
+  .listing-sidebar { position: static !important; width: 100% !important; }
   .listing-similar-grid { grid-template-columns: repeat(2,1fr) !important; }
   .listing-owners-grid { grid-template-columns: repeat(2,1fr) !important; }
-
-  /* ── Garage ── */
   .garage-hero { padding: 2rem 1.2rem !important; }
   .garage-hero-inner { flex-direction: column !important; gap: 1rem !important; }
   .garage-content { padding: 2rem 1.2rem !important; }
   .garage-vehicle-card { grid-template-columns: 1fr !important; }
   .garage-parts-grid { grid-template-columns: 1fr !important; }
   .garage-listings-grid { grid-template-columns: 1fr !important; }
-
-  /* ── Search/Ricambi ── */
   .search-layout { grid-template-columns: 1fr !important; padding: 1rem !important; }
   .search-filters { display: none !important; }
-
-  /* ── Profile ── */
   .profile-hero-inner { flex-direction: column !important; gap: 1rem !important; }
   .profile-content { padding: 2rem 1.2rem !important; grid-template-columns: 1fr !important; }
-  .profile-grid { grid-template-columns: 1fr !important; }
-
-  /* ── Rubriche ── */
-  .rubriche-grid { grid-template-columns: 1fr !important; }
   .rubriche-hero { grid-template-columns: 1fr !important; }
-
-  /* ── Events ── */
-  .events-grid { grid-template-columns: 1fr !important; }
-  .events-hero { grid-template-columns: 1fr !important; }
-
-  /* ── Community ── */
-  .community-grid { grid-template-columns: 1fr !important; }
-
-  /* ── Nav ── */
-  .nav-links { display: none !important; }
-
-  /* ── Footer ── */
-  .footer-inner { flex-direction: column !important; gap: 2rem !important; }
-  .footer-grid { grid-template-columns: 1fr !important; }
+  .rubriche-grid { grid-template-columns: 1fr !important; }
+  .search-row { flex-direction: column !important; border-radius: 16px !important; padding: .5rem !important; }
+  .search-select { display: none !important; }
+  .search-divider { display: none !important; }
+  .search-btn { width: 100% !important; border-radius: 12px !important; padding: .9rem !important; }
 }
-
 @media (max-width: 480px) {
-  #statsBar { grid-template-columns: repeat(2,1fr) !important; }
-  #eventsGrid { grid-template-columns: 1fr !important; }
   .listing-similar-grid { grid-template-columns: 1fr !important; }
+  .listing-owners-grid { grid-template-columns: 1fr !important; }
 }
