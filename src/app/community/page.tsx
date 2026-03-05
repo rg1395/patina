@@ -56,7 +56,7 @@ export default async function CommunityPage({ searchParams }: { searchParams: Re
       </div>
 
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "1.5rem" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden", marginBottom: "2rem" }}>
+        <div className="community-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden", marginBottom: "2rem" }}>
           {CATS.map(cat => (
             <Link key={cat.slug} href={cat.slug === activeCat ? "/community" : `/community?cat=${cat.slug}`}
               style={{ background: cat.slug === activeCat ? C.dark : C.white, padding: "1.1rem 1rem", display: "flex", gap: ".7rem", alignItems: "flex-start", textDecoration: "none", color: "inherit" }}>

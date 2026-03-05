@@ -317,7 +317,7 @@ export default async function HomePage() {
       {/* ══════════════════════════════════════════
           LISTINGS — editorial asymmetric grid
       ══════════════════════════════════════════ */}
-      <section style={{ background: C.dark, padding: "7rem 2rem" }}>
+      <section className="listings-section" style={{ background: C.dark, padding: "7rem 2rem" }}>
         <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3rem" }}>
             <div>

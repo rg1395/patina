@@ -57,8 +57,8 @@ export default async function PublicGaragePage({ params }: { params: { username:
   return (
     <div>
       {/* Header */}
-      <div style={{ background: C.dark, padding: "3.5rem 2.5rem" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", gap: "2rem", alignItems: "flex-start" }}>
+      <div className="garage-hero" style={{ background: C.dark, padding: "3.5rem 2.5rem" }}>
+        <div className="garage-hero-inner" style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", gap: "2rem", alignItems: "flex-start" }}>
           <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: C.orange, overflow: "hidden", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
             {p.avatar_url
               ? <img src={p.avatar_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -96,7 +96,7 @@ export default async function PublicGaragePage({ params }: { params: { username:
         </div>
       </div>
 
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "3rem 2.5rem" }}>
+      <div className="garage-content" style={{ maxWidth: "1280px", margin: "0 auto", padding: "3rem 2.5rem" }}>
         {/* VEHICLES */}
         {publicVehicles.length === 0 ? (
           <div style={{ textAlign: "center", padding: "4rem 2rem", border: `1px dashed ${C.tan}`, marginBottom: "3rem" }}>
@@ -126,7 +126,7 @@ export default async function PublicGaragePage({ params }: { params: { username:
                 return (
                   <div key={v.id} style={{ border: `1px solid ${C.tan}`, background: "white" }}>
                     {/* Vehicle header */}
-                    <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", background: C.dark }}>
+                    <div className="garage-vehicle-card" style={{ display: "grid", gridTemplateColumns: "280px 1fr", background: C.dark }}>
                       <div style={{ aspectRatio: "4/3", background: "#1a1612", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
                         {v.cover_image_url
                           ? <img src={v.cover_image_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -174,7 +174,7 @@ export default async function PublicGaragePage({ params }: { params: { username:
                           {isOwner ? "Aggiungi i ricambi installati su questo veicolo." : "Nessun ricambio documentato."}
                         </p>
                       ) : (
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
+                        <div className="garage-parts-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
                           {parts.map((part: any) => {
                             const linked = part.listing_id ? listingMap[part.listing_id] : null;
                             return (
@@ -223,7 +223,7 @@ export default async function PublicGaragePage({ params }: { params: { username:
               </h2>
               <Link href={`/search?seller=${p.username}`} style={{ ...mono, fontSize: "0.55rem", color: C.muted, textDecoration: "none" }}>Vedi tutti →</Link>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
+            <div className="garage-listings-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
               {(sellerListings ?? []).map((l: any) => (
                 <Link key={l.id} href={`/listings/${l.slug ?? l.id}`} style={{ background: C.cream, textDecoration: "none", color: "inherit" }}>
                   <div style={{ aspectRatio: "4/3", background: C.light, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>

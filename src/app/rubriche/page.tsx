@@ -74,7 +74,7 @@ export default async function RubrichePage({ searchParams }: { searchParams: Rec
           <>
             {featured && (
               <Link href={`/rubriche/${featured.slug}`} style={{ textDecoration: "none", color: "inherit", display: "block", marginBottom: "2rem", borderRadius: "16px", overflow: "hidden" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", background: C.dark }}>
+                <div className="rubriche-hero" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", background: C.dark }}>
                   <div style={{ aspectRatio: "4/3", background: C.light, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     {featured.cover_image_url
                       ? <img src={featured.cover_image_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -95,7 +95,7 @@ export default async function RubrichePage({ searchParams }: { searchParams: Rec
             )}
 
             {rest.length > 0 && (
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(260px,1fr))", gap: "1.2rem" }}>
+              <div className="rubriche-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(260px,1fr))", gap: "1.2rem" }}>
                 {rest.map((a: any) => {
                   const author = profiles[a.author_id];
                   return (

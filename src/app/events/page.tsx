@@ -44,7 +44,7 @@ export default async function EventsPage() {
             <p style={{ ...S.body, fontStyle:"italic" }}>Nessun evento programmato. Torna a breve.</p>
           </div>
         ):(
-          <div style={{ display:"flex", flexDirection:"column", gap:"1px", background:C.tan, borderRadius:"16px", overflow:"hidden", marginBottom:"3rem" }}>
+          <div className="events-list" style={{ display:"flex", flexDirection:"column", gap:"1px", background:C.tan, borderRadius:"16px", overflow:"hidden", marginBottom:"3rem" }}>
             {(events??[]).map((e:any)=>(
               <div key={e.id} style={{ background:C.white, padding:"1.2rem 1.5rem", display:"flex", gap:"1.2rem", alignItems:"flex-start" }}>
                 <div style={{ background:C.dark, color:C.cream, padding:".6rem .9rem", textAlign:"center", flexShrink:0, borderRadius:"10px", minWidth:"54px" }}>

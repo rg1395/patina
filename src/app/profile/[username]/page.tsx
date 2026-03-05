@@ -27,7 +27,7 @@ export default async function ProfilePage({ params }: { params: { username: stri
     <div>
       {/* Profile hero */}
       <div style={{ background: C.dark, padding: "4rem 2.5rem" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", gap: "2rem", alignItems: "flex-start" }}>
+        <div className="profile-hero-inner" style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", gap: "2rem", alignItems: "flex-start" }}>
           <div style={{ width: "90px", height: "90px", borderRadius: "50%", background: C.orange, overflow: "hidden", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", ...serif, fontWeight: 900, fontSize: "2.5rem", color: C.cream }}>
             {p.avatar_url ? <img src={p.avatar_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : (p.full_name ?? p.username ?? "U")[0].toUpperCase()}
           </div>
@@ -56,7 +56,7 @@ export default async function ProfilePage({ params }: { params: { username: stri
         </div>
       </div>
 
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "3rem 2.5rem" }}>
+      <div className="profile-content" style={{ maxWidth: "1280px", margin: "0 auto", padding: "3rem 2.5rem" }}>
         {isOwn && (
           <div style={{ display: "flex", gap: "0.8rem", marginBottom: "2rem" }}>
             <Link href="/profile/edit" style={{ ...mono, fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase", background: C.dark, color: C.cream, padding: "0.5rem 1.2rem", textDecoration: "none" }}>Modifica profilo</Link>
