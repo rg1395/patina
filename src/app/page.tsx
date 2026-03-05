@@ -152,7 +152,7 @@ export default async function HomePage() {
         <div style={{ position: "absolute", inset: 0, zIndex: 1, backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E")`, backgroundSize: "200px 200px", opacity: .5, pointerEvents: "none" }} />
 
         {/* Left — massive type */}
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "8rem 3.5rem 4.5rem", position: "relative", zIndex: 2 }}>
+        <div id="heroText" style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "8rem 3.5rem 4.5rem", position: "relative", zIndex: 2 }}>
           <div style={{ ...eyebrow() }}>
             <span style={{ width: "28px", height: "1px", background: C.orange, flexShrink: 0 }} />
             La casa dei collezionisti europei
@@ -173,7 +173,7 @@ export default async function HomePage() {
         </div>
 
         {/* Right — editorial mosaic */}
-        <div style={{ display: "grid", gridTemplateRows: "55% 45%", gridTemplateColumns: "1fr 1fr", gap: "2px", background: "rgba(200,184,152,.06)", position: "relative", zIndex: 2 }}>
+        <div id="heroMosaic" style={{ display: "grid", gridTemplateRows: "55% 45%", gridTemplateColumns: "1fr 1fr", gap: "2px", background: "rgba(200,184,152,.06)", position: "relative", zIndex: 2 }}>
 
           {/* Big listing preview */}
           {featuredListing ? (
@@ -234,8 +234,8 @@ export default async function HomePage() {
           @keyframes ticker { 0% { transform:translateX(0) } 100% { transform:translateX(-50%) } }
           @media(max-width:900px) {
             #heroSection { grid-template-columns:1fr!important; }
-            #heroSection > div:last-of-type { display:none!important; }
-            #heroSection > div:first-of-type { padding:7rem 1.8rem 4rem!important; min-height:100svh; justify-content:flex-end; }
+            #heroMosaic { display:none!important; }
+            #heroText { padding:7rem 1.8rem 4rem!important; min-height:100svh; justify-content:flex-end; }
           }
         `}</style>
       </section>
