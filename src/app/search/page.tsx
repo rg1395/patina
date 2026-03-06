@@ -55,7 +55,7 @@ export default async function SearchPage({ searchParams }: Props) {
       <div style={{ background:C.dark, padding:"2rem 1.5rem" }}>
         <div style={{ maxWidth:"1280px", margin:"0 auto" }}>
           <form action="/search" method="GET">
-            <div style={{ display:"flex", background:"rgba(246,242,235,0.07)", border:"1px solid rgba(200,184,152,0.18)", borderRadius:"100px", padding:".3rem", gap:".3rem", overflow:"hidden", minWidth:0, overflow:"hidden", minWidth:0 }}>
+            <div style={{ display:"flex", background:"rgba(246,242,235,0.07)", border:"1px solid rgba(200,184,152,0.18)", borderRadius:"100px", padding:".3rem", gap:".3rem", overflow:"hidden", minWidth:0 }}>
               <select name="makes" defaultValue={makes[0]??""} style={{ fontFamily:"DM Mono, monospace", fontSize:".58rem", letterSpacing:".08em", textTransform:"uppercase", padding:"0 .5rem", background:"transparent", color:C.cream, border:"none", outline:"none", cursor:"pointer", flexShrink:0, maxWidth:"130px" }}>
                 <option value="" style={{ color:C.dark, background:"#fff" }}>Tutte le marche</option>
                 {MAKES.map(m=><option key={m} value={m} style={{ color:C.dark, background:"#fff" }}>{m}</option>)}
