@@ -68,7 +68,7 @@ export default async function ProfilePage({ params }: { params: { username: stri
         {(vehicles?.length ?? 0) > 0 && (
           <div style={{ marginBottom: "3rem" }}>
             <h2 style={{ ...serif, fontWeight: 700, fontSize: "1.5rem", marginBottom: "1.5rem" }}>Garage di <em style={{ fontStyle: "italic", color: C.orange }}>{p.username}</em></h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(80px,1fr))", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
               {(vehicles ?? []).map((v: any) => (
                 <div key={v.id} style={{ background: C.white, padding: "1rem" }}>
                   <div style={{ aspectRatio: "16/9", background: C.dark, marginBottom: "0.6rem", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -86,7 +86,7 @@ export default async function ProfilePage({ params }: { params: { username: stri
         {(listings?.length ?? 0) > 0 && (
           <div style={{ marginBottom: "3rem" }}>
             <h2 style={{ ...serif, fontWeight: 700, fontSize: "1.5rem", marginBottom: "1.5rem" }}>Annunci <em style={{ fontStyle: "italic", color: C.orange }}>attivi</em></h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(80px,1fr))", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
               {(listings ?? []).map((l: any) => (
                 <Link key={l.id} href={`/listings/${l.slug ?? l.id}`} style={{ background: C.cream, textDecoration: "none", color: "inherit", display: "block" }}>
                   <div style={{ aspectRatio: "4/3", background: C.dark, overflow: "hidden", position: "relative" }}>

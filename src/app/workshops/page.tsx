@@ -25,7 +25,7 @@ export default async function WorkshopsPage() {
             <p style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic" }}>Nessuna officina ancora. Siamo in fase di raccolta delle candidature.</p>
           </div>
         ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,300px),1fr),1fr)", gap: "1px", background: C.tan, borderRadius: "14px", overflow: "hidden" }}>
             {(workshops ?? []).map((w: any) => <WorkshopCard key={w.id} w={w} />)}
           </div>
         )}

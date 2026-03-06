@@ -72,7 +72,7 @@ export default function NotificationBell({ userId }: { userId: string }) {
       </button>
 
       {open && (
-        <div style={{ position: "absolute", right: 0, top: "calc(100% + 0.6rem)", width: "320px", background: "#fff", border: `1px solid ${C.tan}`, zIndex: 300, boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}>
+        <div style={{ position: "fixed", right: "1rem", top: "64px", width: "min(320px, calc(100vw - 2rem))", background: "#fff", border: `1px solid ${C.tan}`, zIndex: 300, boxShadow: "0 8px 32px rgba(0,0,0,0.12)", borderRadius: "12px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.8rem 1rem", borderBottom: `1px solid ${C.light}` }}>
             <span style={{ ...mono, fontSize: "0.55rem", color: C.dark }}>Notifiche</span>
             {unread > 0 && <button onClick={markAllRead} style={{ ...mono, fontSize: "0.48rem", color: C.muted, background: "none", border: "none", cursor: "pointer" }}>Segna tutte lette</button>}
