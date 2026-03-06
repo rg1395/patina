@@ -60,7 +60,7 @@ export default async function SearchPage({ searchParams }: Props) {
                 <option value="" style={{ color:C.dark, background:"#fff" }}>Tutte le marche</option>
                 {MAKES.map(m=><option key={m} value={m} style={{ color:C.dark, background:"#fff" }}>{m}</option>)}
               </select>
-              <input name="q" defaultValue={q} type="text" placeholder="Cerca ricambi..." style={{ flex:1, background:"transparent", border:"none", outline:"none", color:C.cream, fontFamily:"Lora, serif", fontStyle:"italic", fontSize:"1rem", padding:".65rem .3rem", minWidth:0, width:0, minWidth:0, width:0 }} />
+              <input name="q" defaultValue={q} type="text" placeholder="Cerca ricambi..." style={{ flex:1, background:"transparent", border:"none", outline:"none", color:C.cream, fontFamily:"Lora, serif", fontStyle:"italic", fontSize:"1rem", padding:".65rem .3rem", minWidth:0, width:0 }} />
               <button type="submit" style={{ background:C.orange, color:C.cream, border:"none", borderRadius:"100px", padding:".7rem 1rem", fontFamily:"DM Mono, monospace", fontSize:".6rem", letterSpacing:".1em", textTransform:"uppercase", cursor:"pointer", whiteSpace:"nowrap", flexShrink:0 }}>Cerca</button>
             </div>
           </form>
